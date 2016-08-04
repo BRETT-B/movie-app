@@ -1,0 +1,19 @@
+
+$mainBgColor: #ccffcc;
+$lineHeightParent: 30px;
+$lineHeightChildren: 20px;
+
+@import '_header';
+body{
+	width: 100%;
+	margin: 0px;
+	background-color: $mainBgColor;
+	
+	#footer{
+		width: 100%;
+		background-color: blue;
+		bottom: 0px;
+		height: 30px;
+		position: absolute;
+	}
+}
