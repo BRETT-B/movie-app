@@ -1,22 +1,42 @@
-/* line 1, ../compass/sass/_header.scss */
-#header {
-  width: 100%;
-  position: fixed;
-  background-color: red;
-  height: 30px;
-}
-
 /* line 7, ../compass/sass/styles.scss */
 body {
   width: 100%;
-  margin: 0px;
-  background-color: #ccffcc;
+  background-image: url("../images/bckgrnd.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-/* line 12, ../compass/sass/styles.scss */
-body #footer {
-  width: 100%;
-  background-color: blue;
-  bottom: 0px;
-  height: 30px;
-  position: absolute;
+/* line 14, ../compass/sass/styles.scss */
+body .container {
+  width: 1200px;
+  overflow: hidden;
+}
+/* line 18, ../compass/sass/styles.scss */
+body .container.after-header {
+  padding-top: 40px;
+}
+/* line 21, ../compass/sass/styles.scss */
+body .container .col {
+  width: 280px;
+  margin: auto 10px;
+  float: left;
+}
+
+/* line 29, ../compass/sass/styles.scss */
+.title {
+  font-family: 'Open Sans', sans-serif;
+  text-decoration-color: white;
+  padding-top: 20px;
+}
+
+/* line 34, ../compass/sass/styles.scss */
+.search-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* line 38, ../compass/sass/styles.scss */
+.btn {
+  color: #BFF75E;
+  background-color: #000;
 }

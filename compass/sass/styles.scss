@@ -1,19 +1,41 @@
-
-$mainBgColor: #ccffcc;
-$lineHeightParent: 30px;
-$lineHeightChildren: 20px;
-
-@import '_header';
+// Variables stored in separate file
+@import 'configs/variables';
+// This SASS function sets the column width
+@function getColumnWidth($width, $numColumns, $margin){
+	@return ($width / $numColumns) - ($margin * 2);
+}
 body{
 	width: 100%;
-	margin: 0px;
-	background-color: $mainBgColor;
-	
-	#footer{
-		width: 100%;
-		background-color: blue;
-		bottom: 0px;
-		height: 30px;
-		position: absolute;
+	background-image: $mainBgImg;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+	.container{
+
+		width: $width;
+		overflow: hidden;
+		&.after-header{
+			padding-top: 40px;
+		}
+		.col{
+			width: getColumnWidth($width, $numColumns, $margin);
+			margin: auto $margin;
+			float: left;
+			
+		}
 	}
+}
+.title{
+	font-family: 'Open Sans', sans-serif;
+	text-decoration-color: white;
+	padding-top: 20px;
+}
+.search-container{
+	text-align: center;
+	margin-top: 20px;
+}
+.btn{
+	color: #BFF75E;
+	background-color: #000;
 }
