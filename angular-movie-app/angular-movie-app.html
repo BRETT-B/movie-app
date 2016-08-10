@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+<head>
+	<title>AngularJS Movie App</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="angular-movie-app.js"></script>
+	<style type="text/css" media="screen">
+		.bubble{
+			animation: pulse 1s infinite;
+			border: 5px solid white;
+		}
+		@keyframes pulse {
+ 		0%      { transform:scale(1); }
+ 		25%     { transform:scale(1.5); }
+ 		75%     { transform:scale(1); }
+		}
+		.headerStyles{
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body ng-style="{'background-color': 'black'}" ng-controller="movieController">
+	<div class="container-fluid">
+		<div class="header-wrapper">
+			<div class="row col-md-12 col-md-offset-5" ng-style="{color: myStyle}">
+				<h1 ng-hide="checked2" ng-class="{headerStyles: queryString}">Movie Search</h1>
+			</div>
+			<div class="row well col-md-7 col-md-offset-3">
+				<form ng-submit="getNewMovieStuff()" ng-style="{color: 'darkblue'}">
+					<input type="text" ng-model="queryString">
+					<button class="btn btn-primary" ng-model="under">Search</button>
+					<input type="checkbox" ng-model="pulse"> Insane Mode
+					<input type="checkbox" ng-model="checked"> Remove Posters
+					<input type="checkbox" ng-model="checked2"> Remove Title
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div ng-repeat="movie in movieArray | filter:queryString" class="col-md-3 movie-poster">
+				<img ng-if="!checked" ng-class="{bubble: pulse}" ng-src="{{imagePath}}{{movie.poster_path}}">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
